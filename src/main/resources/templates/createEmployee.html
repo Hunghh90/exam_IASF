@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create Employee</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+</head>
+<body>
+<div class="container">
+    <h1>Create Employee</h1>
+    <form th:action="@{/employees/create}" th:object="${employee}" method="post">
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" th:field="*{name}" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label>Wage</label>
+            <input type="number" th:field="*{wage}" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+</div>
+</body>
+</html>
